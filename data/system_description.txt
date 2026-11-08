@@ -1,0 +1,17 @@
+A cloud-based application consists of an API Gateway,
+Authentication Service, and PostgreSQL Database.
+
+The API Gateway depends on the Authentication Service
+to validate incoming requests.
+
+The Authentication Service depends on the PostgreSQL
+Database to retrieve user credentials.
+
+The Authentication Service and API Gateway belong to
+the Application Services subsystem. The database
+belongs to the Data Storage subsystem.
+
+The API Gateway communicates with the Authentication
+Service using HTTPS. The Authentication Service
+communicates with the database using PostgreSQL's
+wire protocol.
