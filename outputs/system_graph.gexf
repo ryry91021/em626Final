@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-11-08">
+    <creator>NetworkX 3.7</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="3" title="interface" type="string" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="name" type="string" />
+      <attribute id="1" title="type" type="string" />
+      <attribute id="2" title="description" type="string" />
+    </attributes>
+    <nodes>
+      <node id="api-gateway" label="api-gateway">
+        <attvalues>
+          <attvalue for="0" value="API Gateway" />
+          <attvalue for="1" value="Service" />
+          <attvalue for="2" value="Cloud-based application component for handling incoming requests." />
+        </attvalues>
+      </node>
+      <node id="auth-service" label="auth-service">
+        <attvalues>
+          <attvalue for="0" value="Authentication Service" />
+          <attvalue for="1" value="Service" />
+          <attvalue for="2" value="Cloud-based application component for validating requests and retrieving credentials." />
+        </attvalues>
+      </node>
+      <node id="postgres-database" label="postgres-database">
+        <attvalues>
+          <attvalue for="0" value="PostgreSQL Database" />
+          <attvalue for="1" value="Database" />
+          <attvalue for="2" value="Data storage component for user credentials." />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="api-gateway" target="auth-service" id="0" type="depends_on">
+        <attvalues>
+          <attvalue for="3" value="HTTPS" />
+        </attvalues>
+      </edge>
+      <edge source="auth-service" target="postgres-database" id="1" type="depends_on">
+        <attvalues>
+          <attvalue for="3" value="PostgreSQL's wire protocol" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "api-gateway",
+      "name": "API Gateway",
+      "type": "Service",
+      "description": "Cloud-based application component for handling incoming requests.",
+      "subsystem": null
+    },
+    {
+      "id": "auth-service",
+      "name": "Authentication Service",
+      "type": "Service",
+      "description": "Cloud-based application component for validating requests and retrieving credentials.",
+      "subsystem": null
+    },
+    {
+      "id": "postgres-database",
+      "name": "PostgreSQL Database",
+      "type": "Database",
+      "description": "Data storage component for user credentials.",
+      "subsystem": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "api-gateway",
+      "target": "auth-service",
+      "interface": "HTTPS"
+    },
+    {
+      "source": "auth-service",
+      "target": "postgres-database",
+      "interface": "PostgreSQL's wire protocol"
+    }
+  ]
+}

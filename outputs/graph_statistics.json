@@ -1,0 +1,33 @@
+{
+  "nodes": 3,
+  "edges": 2,
+  "weakly_connected_components": 1,
+  "isolated_nodes": [],
+  "degree_distribution": {
+    "1": 2,
+    "2": 1
+  },
+  "components": [
+    {
+      "id": "api-gateway",
+      "name": "API Gateway",
+      "in_degree": 0,
+      "out_degree": 1,
+      "total_degree": 1
+    },
+    {
+      "id": "auth-service",
+      "name": "Authentication Service",
+      "in_degree": 1,
+      "out_degree": 1,
+      "total_degree": 2
+    },
+    {
+      "id": "postgres-database",
+      "name": "PostgreSQL Database",
+      "in_degree": 1,
+      "out_degree": 0,
+      "total_degree": 1
+    }
+  ]
+}
