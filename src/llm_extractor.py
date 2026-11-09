@@ -40,24 +40,11 @@ class SystemGraph(BaseModel):
         return self
 
 
-SYSTEM_PROMPT = """
-You are a systems engineering information extractor.
-
-Extract:
-- System components
-- Component types and descriptions
-- Subsystem membership
-- Directed dependencies
-- Interfaces associated with dependencies
-
-Rules:
-1. Only extract information supported by the input.
-2. Do not invent additional components or dependencies.
-3. Use unique, consistent component IDs.
-4. An edge A -> B means A depends on B.
-5. Do not confuse response traffic with dependencies.
-6. Return JSON matching the supplied schema.
-"""
+SYSTEM_PROMPT = (
+    Path(__file__).resolve().parent.parent
+    / "prompts"
+    / "extraction_prompt.txt"
+).read_text(encoding="utf-8")
 
 
 def extract_system(description: str) -> SystemGraph:
